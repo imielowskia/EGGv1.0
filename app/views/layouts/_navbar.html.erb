@@ -1,0 +1,25 @@
+<div class="navbar bg-primary text-white">
+    <div class="navbar-start">
+
+      <img src="<%= asset_path('logo.jpg') %>" alt="Logo" class="h-12 w-25">
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <% if authenticated? %>
+            Jesteś zalogowany jako: <%= Current.user.name %> <%= Current.user.surname %>
+            <%= Time.now.strftime(" %H:%M:%S") %>
+      <% else %>
+            <p>Nie jesteś zalogowany</p>
+      <% end %>
+    </div>
+
+
+    <div class="navbar-end">
+      <% if authenticated? %>
+        <%= button_to 'Wyloguj', session_path, method: :delete, class: "btn btn-outline bg-white text-primary btn-sm" %>
+
+      <% else %>
+        <%= link_to 'Logowanie', new_session_path, class: "btn btn-outline bg-white text-primary btn-sm" %>
+      <% end %>
+
+    </div>
+</div>

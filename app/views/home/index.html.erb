@@ -1,4 +1,14 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
+<div class="hero bg-base-200 h-96">
+  <div class="hero-content text-center">
+    <div class="max-w-xl">
+      <h1 class="text-5xl font-bold">Kolokwium zaliczeniowe</h1>
+      <p class="py-6">
+        programowanie w języku Python - semestr zimowy 2024/25
+      </p>
+      <% if !authenticated? %>
+        <%= link_to 'Logowanie', new_session_path, class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+  </div>
 </div>
