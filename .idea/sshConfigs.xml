@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="przedmioty.iit.pwste.edu.pl" id="1ab473ec-f09e-42dd-a203-bda7fd26cc3a" port="22" nameFormat="DESCRIPTIVE" username="imielowskia" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

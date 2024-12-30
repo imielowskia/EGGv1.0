@@ -1,3 +1,4 @@
+<% if !authenticated? %>
 <div class="hero bg-base-200 h-96">
   <div class="hero-content text-center">
     <div class="max-w-xl">
@@ -5,10 +6,49 @@
       <p class="py-6">
         programowanie w języku Python - semestr zimowy 2024/25
       </p>
-      <% if !authenticated? %>
         <%= link_to 'Logowanie', new_session_path, class: "btn btn-primary" %>
-      <% end %>
-
     </div>
   </div>
 </div>
+<% end %>
+
+
+<% if authenticated? %>
+
+  <div class="card bg-blue-500 p-5 border border-gray-700">
+    <div class="card-body">
+      <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-2">
+          <h1 class="text-4xl font-bold text-center">Kolokwium zaliczeniowe</h1>
+          <h1 class="text-3xl font-bold text-center">programowanie w języku Python - semestr zimowy 2024/25</h1>
+        </div>
+        <div >
+          <%= link_to "Pobierz PDF", home_show_path(@zestaw, format: :pdf), target: "_blank", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="card-body">
+
+      <h5><b> Zestaw pytań dla <%= Current.user.name %> <%= Current.user.surname %> wylosowany <%= @zestaw.first.created_at.strftime("%d.%m.%Y o %H:%M") %></b></h5>
+      <% i=1 %>
+      <% @zestaw.each do |z| %>
+        <font class="font-weight-bold">Pytanie.<%= i %></font>
+        <%= z.question.tekst %><br>
+        <% i+=1 %>
+      <% end %>
+      </p>
+      <p>
+        W pytaniu 3 nazwy plików są jednocześnie linkami do ich pobrania!
+        Wyniki należy zapisać do zadania na platformie Teams w czasie przewidzianym dla zadania.
+        Należy zapisać pliki odpowiednich programów Pythona o nazwach wskazujących na numer pytania, którego dotyczą,
+        do rozwiązań należy dołączyc pobrany plik pdf z treścią zadań. Proszę nie pakować rozwiązań (te pliki nie są duże).
+      </p>
+      <h6 class="text-danger font-weight-bold">
+        Proszę kontrolować czas! Po zamknięciu zadania w Teams rozwiązania nie będą przyjmowane!
+      </h6>
+    </div>
+  </div>
+<% end %>
+

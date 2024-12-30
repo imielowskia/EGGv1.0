@@ -1,0 +1,29 @@
+<h1>Lista użytkowników</h1>
+
+<%= form_tag import_import_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Nr</th>
+    <th>Imię</th>
+    <th>Nazwisko</th>
+    <th>Indeks</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |u| %>
+    <tr>
+      <td><%= u.id %></td>
+      <td><%= u.imie %></td>
+      <td><%= u.nazwisko %></td>
+      <td><%= u.indeks %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

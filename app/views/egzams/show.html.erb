@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @egzam.user_id %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @egzam.question_id %>
+</p>
+
+<%= link_to 'Edit', edit_egzam_path(@egzam) %> |
+<%= link_to 'Back', egzams_path %>

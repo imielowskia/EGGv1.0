@@ -1,0 +1,29 @@
+
+  <h1>Kolokwium z programowania w języku Python</h1>
+  <h2>III rok informatyki IIT/PANS 2024</h2>
+
+  <% if authenticated? %>
+
+
+        <h3> <b> Zestaw pytań dla <%= Current.user.name %> <%= Current.user.surname %> wylosowany <%= @zestaw.first.created_at.strftime("%d.%m.%Y o %H:%M") %></b></h3>
+
+
+        <% i=1 %>
+        <% @zestaw.each do |z| %>
+          <b>Pytanie. <%= i %></b>
+          <%= z.question.tekst %><br>
+          <% i+=1 %>
+        <% end %>
+
+        <i>
+          W pytaniu 3 nazwy plików są jednocześnie linkami do ich pobrania!<br>
+          Wyniki należy zapisać do zadania na platformie Teams w czasie przewidzianym dla zadania.
+          Należy zapisać pliki odpowiednich programów Pythona o nazwach wskazujących na numer pytania, którego dotyczą,
+          do rozwiązań należy dołączyc pobrany plik pdf z treścią zadań. Proszę nie pakować rozwiązań (te pliki nie są duże).
+        </i><br>
+        <b>
+          Proszę kontrolować czas! Po zamknięciu zadania w Teams rozwiązania nie będą przyjmowane!
+        </b>
+
+
+  <% end %>

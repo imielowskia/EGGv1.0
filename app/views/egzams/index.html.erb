@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Egzams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @egzams.each do |egzam| %>
+      <tr>
+        <td><%= egzam.user_id %></td>
+        <td><%= egzam.question_id %></td>
+        <td><%= link_to 'Show', egzam %></td>
+        <td><%= link_to 'Edit', edit_egzam_path(egzam) %></td>
+        <td><%= link_to 'Destroy', egzam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Egzam', new_egzam_path %>

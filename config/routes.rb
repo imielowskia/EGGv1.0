@@ -3,6 +3,14 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
 
+  resources :egzams
+  resources :questions
+
+  get 'home/show', to: 'home#show', defaults: { format: 'pdf' }
+
+  get 'import/lista'
+  post 'import/import'
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

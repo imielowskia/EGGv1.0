@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e2123b4d-c238-477b-8754-aa35c5823ea8" name="przedmioty.iit.pwste.edu.pl">
+        <fileTransfer rootFolder="/home/egg/egg/code" accessType="SFTP" host="przedmioty.iit.pwste.edu.pl" port="22" sshConfigId="1ab473ec-f09e-42dd-a203-bda7fd26cc3a" sshConfig="imielowskia@przedmioty.iit.pwste.edu.pl:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
