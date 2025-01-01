@@ -6,14 +6,14 @@
 <% end %>
 
 
-<table class="table table-striped">
+<table class="table table-xs">
   <thead>
   <tr>
     <th>Nr</th>
     <th>Imię</th>
     <th>Nazwisko</th>
     <th>Indeks</th>
-    <th>Pb</th>
+    <th>Pobrab</th>
   </tr>
   </thead>
 
@@ -21,9 +21,9 @@
   <% @users.each do |u| %>
     <tr>
       <td><%= u.id %></td>
-      <td><%= u.imie %></td>
-      <td><%= u.nazwisko %></td>
-      <td><%= u.indeks %></td>
+      <td><%= u.name %></td>
+      <td><%= u.surname %></td>
+      <td><%= u.login %></td>
       <td><%= u.pobral %></td>
     </tr>
   <% end %>

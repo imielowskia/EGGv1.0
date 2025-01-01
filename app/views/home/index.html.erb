@@ -15,7 +15,7 @@
 
 <% if authenticated? %>
 
-  <div class="card bg-blue-500 p-5 border border-gray-700">
+  <div class="card bg-grey-100 p-5 border border-gray-700">
     <div class="card-body">
       <div class="grid grid-cols-3 gap-4">
         <div class="col-span-2">
@@ -34,18 +34,18 @@
       <h5><b> Zestaw pytań dla <%= Current.user.name %> <%= Current.user.surname %> wylosowany <%= @zestaw.first.created_at.strftime("%d.%m.%Y o %H:%M") %></b></h5>
       <% i=1 %>
       <% @zestaw.each do |z| %>
-        <font class="font-weight-bold">Pytanie.<%= i %></font>
+          <p class="font-bold">Pytanie. <%= i %></p>
         <%= z.question.tekst %><br>
         <% i+=1 %>
       <% end %>
       </p>
-      <p>
+      <p class="italic">
         W pytaniu 3 nazwy plików są jednocześnie linkami do ich pobrania!
         Wyniki należy zapisać do zadania na platformie Teams w czasie przewidzianym dla zadania.
         Należy zapisać pliki odpowiednich programów Pythona o nazwach wskazujących na numer pytania, którego dotyczą,
-        do rozwiązań należy dołączyc pobrany plik pdf z treścią zadań. Proszę nie pakować rozwiązań (te pliki nie są duże).
+        do rozwiązań należy dołączyć pobrany plik pdf z treścią zadań. Proszę nie pakować rozwiązań (te pliki nie są duże).
       </p>
-      <h6 class="text-danger font-weight-bold">
+      <h6 class="font-bold text-red-500 italic">
         Proszę kontrolować czas! Po zamknięciu zadania w Teams rozwiązania nie będą przyjmowane!
       </h6>
     </div>

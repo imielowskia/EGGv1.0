@@ -8,10 +8,10 @@ class HomeController < ApplicationController
 
         for i in (1..3)
           egz=Egzam.new
-          nr = rand(4)+1
-          #egz = Egzam.where(user_id: current_user.id).joins(:question).where('questions.gr' => i).first
+          nrp = Question.where(gr: i).count
+          nr = rand(nrp)+1
           egz.user_id = Current.user.id
-          egz.question_id = nr+(i-1)*4
+          egz.question_id = nr+(i-1)*3
           egz.created_at = DateTime.now
           egz.updated_at = DateTime.now
           egz.save!

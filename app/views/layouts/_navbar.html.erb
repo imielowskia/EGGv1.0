@@ -15,6 +15,20 @@
 
     <div class="navbar-end">
       <% if authenticated? %>
+        <% if Current.user.login = 'And' %>
+            <span class="nav-link">
+                <%= link_to 'Start', home_index_path, class: "btn btn-outline bg-white text-primary btn-sm" %>
+            </span>
+
+            <span class="nav-link">
+                <%= link_to 'Lista', import_lista_path, class: "btn btn-outline bg-white text-primary btn-sm" %>
+            </span>
+
+            <span class="nav-link">
+                <%= link_to 'Pytania', questions_path, class: "btn btn-outline bg-white text-primary btn-sm" %>
+            </span>
+          <% end %>
+
         <%= button_to 'Wyloguj', session_path, method: :delete, class: "btn btn-outline bg-white text-primary btn-sm" %>
 
       <% else %>
