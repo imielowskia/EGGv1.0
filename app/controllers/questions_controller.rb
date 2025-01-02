@@ -10,8 +10,8 @@ class QuestionsController < ApplicationController
       format.pdf do
         render pdf: "Lista pytań",
                page_size: 'A4',
-               template: "questions/index.html.erb",
-               layout: "pdf.html",
+               template: "questions/index",
+               layout: "pdf",
                orientation: "Portrait",
                lowquality: false,
                zoom: 1,

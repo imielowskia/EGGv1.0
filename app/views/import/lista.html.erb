@@ -2,30 +2,9 @@
 
 <%= form_tag import_import_path, multipart: true do %>
   <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
+  <%= submit_tag "Import", class: 'btn btn-sm btn-primary' %>
 <% end %>
 
-
-<table class="table table-xs">
-  <thead>
-  <tr>
-    <th>Nr</th>
-    <th>Imię</th>
-    <th>Nazwisko</th>
-    <th>Indeks</th>
-    <th>Pobrab</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @users.each do |u| %>
-    <tr>
-      <td><%= u.id %></td>
-      <td><%= u.name %></td>
-      <td><%= u.surname %></td>
-      <td><%= u.login %></td>
-      <td><%= u.pobral %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= turbo_stream_from 'lista' do %>
+  <%= render 'table', locals: {users: @users} %>
+<% end %>

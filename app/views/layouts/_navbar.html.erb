@@ -15,15 +15,13 @@
 
     <div class="navbar-end">
       <% if authenticated? %>
-        <% if Current.user.login = 'And' %>
+        <% if Current.user.login == 'and' %>
             <span class="nav-link">
                 <%= link_to 'Start', home_index_path, class: "btn btn-outline bg-white text-primary btn-sm" %>
             </span>
-
             <span class="nav-link">
                 <%= link_to 'Lista', import_lista_path, class: "btn btn-outline bg-white text-primary btn-sm" %>
             </span>
-
             <span class="nav-link">
                 <%= link_to 'Pytania', questions_path, class: "btn btn-outline bg-white text-primary btn-sm" %>
             </span>

@@ -1,0 +1,22 @@
+
+<table class="table table-xs">
+  <thead>
+    <tr>
+      <th>Gr</th>
+      <th>Tekst</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.gr %></td>
+        <td><%= question.tekst %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
