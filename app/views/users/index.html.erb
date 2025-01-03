@@ -1,0 +1,29 @@
+<div>
+  <h1 class="font-bold text-4xl">Lista użytkowników </h1>
+
+  <div>
+    <%= render partial: 'pobrane' %>
+  </div>
+</div>
+
+<div>
+  <table class="table table-xs">
+    <thead>
+    <tr>
+      <th>Nr</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Indeks</th>
+      <th>Pobrał</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+
+        <%= render partial: 'user', locals: { user: user } %>
+
+    <% end %>
+    <%= turbo_stream_from 'users' %>
+    </tbody>
+  </table>
+</div>

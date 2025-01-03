@@ -1,0 +1,12 @@
+<!-- app/views/users/_user.html.erb -->
+<tr id="<%= dom_id(user) %>">
+  <td><%= user.id %></td>
+  <td><%= user.name %></td>
+  <td><%= user.surname %></td>
+  <td><%= user.login %></td>
+  <% if user.pobral %>
+    <td class="bg-blue-600"><%= user.pobral %></td>
+    <% else %>
+    <td></td>
+  <% end %>
+</tr>

@@ -4,8 +4,8 @@ class User < ApplicationRecord
   has_many :egzams
   has_many :questions, through: :egzams
   require 'csv'
-  after_update_commit {aktualizuj}
-  after_create_commit {aktualizuj}
+  after_update_commit -> { broadcast_replace_to 'users' }
+  after_update_commit -> { broadcast_replace_to 'users', target: 'pobrane', partial: 'users/pobrane'}
 
   def self.import(file)
 
@@ -18,9 +18,11 @@ class User < ApplicationRecord
     end
   end
 
-  def aktualizuj
-    broadcast_replace_to 'lista', partial: 'import/users_table', locals: { users: User.all }
-  end
-
   normalizes :email_address, with: ->(e) { e.strip.downcase }
+
+  private
+
+  def broadcast_pobral_update
+    broadcast_replace_to 'users', target: "user_#{id}", partial: 'users/user', locals: { user: self }
+  end
 end

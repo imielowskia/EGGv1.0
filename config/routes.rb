@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   get "home/index"
   resource :session
   resources :passwords, param: :token
-
+  resources :users, only: [:index]
   resources :egzams
   resources :questions
+
 
   get 'home/show', to: 'home#show', defaults: { format: 'pdf' }
 

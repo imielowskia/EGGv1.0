@@ -10,14 +10,19 @@
   </thead>
 
   <tbody>
-  <% users.each do |u| %>
+  <% @users.each do |u| %>
     <tr>
       <td><%= u.id %></td>
       <td><%= u.name %></td>
       <td><%= u.surname %></td>
       <td><%= u.login %></td>
-      <td><%= u.pobral %></td>
+      <% if u.pobral %>
+        <td class="bg-blue-600"><%= u.pobral %></td>
+      <% else %>
+        <td></td>
+      <% end %>
     </tr>
+    <%= turbo_stream_from 'users' %>
   <% end %>
   </tbody>
 </table>

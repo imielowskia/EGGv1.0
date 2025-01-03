@@ -5,6 +5,4 @@
   <%= submit_tag "Import", class: 'btn btn-sm btn-primary' %>
 <% end %>
 
-<%= turbo_stream_from 'lista' do %>
-  <%= render 'table', locals: {users: @users} %>
-<% end %>
+<%= render 'table', locals: {users: @users} %>
